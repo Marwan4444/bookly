@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/presentation/view/home_view.dart';
 import 'package:bookly/Features/splash/presetation/view/splash_view.dart';
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class Bookly extends StatelessWidget {
       ),
       home: SplashView(),
       routes: {
-        '/home':(context) => const SplashView(),
+        '/home':(context) => const HomeView(),
       },
       
     );

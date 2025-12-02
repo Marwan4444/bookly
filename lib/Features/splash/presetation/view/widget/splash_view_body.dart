@@ -56,9 +56,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController.forward();
   }
 
-  void navigateToHome() {
-    Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, '/home');
-    });
-  }
+
+  void navigateToHome() async {
+  final navigator = Navigator.of(context);
+
+  await Future.delayed(Duration(seconds: 2));
+
+  navigator.pushReplacementNamed('/home');
+}
 }
