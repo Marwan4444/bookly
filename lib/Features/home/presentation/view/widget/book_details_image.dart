@@ -1,0 +1,27 @@
+import 'package:bookly/core/utils/assets.dart';
+import 'package:flutter/material.dart';
+
+class BookDetailsImage extends StatelessWidget {
+  const BookDetailsImage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 300,
+      child: AspectRatio(
+        aspectRatio: 2.7 / 4,
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(Assets.testImage),
+              fit: BoxFit.fill,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ),
+    );
+  }
+}

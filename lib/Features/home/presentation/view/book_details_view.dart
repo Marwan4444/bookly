@@ -6,6 +6,18 @@ class BookDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BookDetailsViewBody();
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color.fromARGB(255, 42, 0, 97),    
+            Color.fromARGB(255, 85, 0, 160),   
+            Color.fromARGB(255, 200, 60, 107), 
+          ],
+        ),  
+      ),
+      child: BookDetailsViewBody());
   }
 }
