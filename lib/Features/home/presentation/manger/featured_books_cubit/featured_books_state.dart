@@ -1,7 +1,9 @@
 part of 'featured_books_cubit.dart';
 
 @immutable
-sealed class FeaturedBooksState {}
+abstract class FeaturedBooksState {
+  const FeaturedBooksState();
+}
 
 final class FeaturedBooksInitial extends FeaturedBooksState {}
 
@@ -9,10 +11,10 @@ final class FeaturedBooksLoading extends FeaturedBooksState {}
 
 final class FeaturedBooksSuccess extends FeaturedBooksState {
   final List<BookModel> books;
-  FeaturedBooksSuccess(this.books);
+ const FeaturedBooksSuccess(this.books);
 }
 
 final class FeaturedBooksFailure extends FeaturedBooksState {
   final String errMessage;
-  FeaturedBooksFailure(this.errMessage);
+ const FeaturedBooksFailure(this.errMessage);
 }
