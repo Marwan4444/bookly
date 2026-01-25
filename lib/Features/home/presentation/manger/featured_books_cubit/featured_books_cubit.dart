@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 part 'featured_books_state.dart';
 
 class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
-  FeaturedBooksCubit(this.homeRepo) : super(FeaturedBooksInitial());
+  FeaturedBooksCubit(this.homeRepo,) : super(FeaturedBooksInitial());
 
   final HomeRepo homeRepo;
 
