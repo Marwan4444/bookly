@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 abstract class Failures {
   final String errmessage;
@@ -30,7 +31,10 @@ factory ServerFailure.fromDioError(DioException dioError) {
     case DioExceptionType.connectionError:
       return ServerFailure('No internet connection');
     case DioExceptionType.unknown:
-      return ServerFailure('Opps there was an error');
+        debugPrint('UNKNOWN ERROR: ${dioError.error}');
+  debugPrint('STACKTRACE: ${dioError.stackTrace}');
+  return ServerFailure('Unexpected error occurred');
+    
     }
   
 }

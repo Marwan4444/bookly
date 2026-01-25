@@ -12,50 +12,42 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failures, List<BookModel>>> fetchNewestBooks() async {
     try {
-  final data = await apiService.get(
-    endpoint:
-        'volumes?filtering=free-ebooks&sorting=newest&q=computer science',
-  );
+      final data = await apiService.get(
+        endpoint:
+            'volumes?filtering=free-ebooks&sorting=newest&q=computerscience',
+      );
 
-  final books = (data['items'] as List? ?? [])
-      .map((item) => BookModel.fromJson(item))
-      .toList();
+      final books = (data['items'] as List? ?? [])
+          .map((item) => BookModel.fromJson(item))
+          .toList();
 
-  return Right(books);
-} catch (e) {
-  if (e is DioException) {
-    return Left(ServerFailure.fromDioError(e));
-  }
-  return left(ServerFailure(e.toString()));
-}
-
-  
+      return Right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioError(e));
+      }
+      return Left(ServerFailure(e.toString()));
+    }
   }
 
   @override
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks() async {
-     try {
-  final data = await apiService.get(
-    endpoint:
-        'volumes?filtering=free-ebooks&q=computer science',
-  );
+    try {
+      final data = await apiService.get(
+        endpoint:
+            'volumes?filtering=free-ebooks&q=computer science',
+      );
 
-  final books = (data['items'] as List? ?? [])
-      .map((item) => BookModel.fromJson(item))
-      .toList();
+      final books = (data['items'] as List? ?? [])
+          .map((item) => BookModel.fromJson(item))
+          .toList();
 
-  return Right(books);
-} catch (e) {
-  if (e is DioException) {
-    return Left(ServerFailure.fromDioError(e));
+      return Right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioError(e));
+      }
+      return Left(ServerFailure(e.toString()));
+    }
   }
-  return left(ServerFailure(e.toString()));
-}
-
-  
-  }
-}
-
-extension on Response {
-  void operator [](String other) {}
 }

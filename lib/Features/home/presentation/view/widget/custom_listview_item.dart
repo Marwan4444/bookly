@@ -1,8 +1,9 @@
-import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomListviewItem extends StatelessWidget {
-  const CustomListviewItem({super.key});
+  const CustomListviewItem({super.key, required this.ImageUrl});
+
+  final String ImageUrl ;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class CustomListviewItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(Assets.testImage),
+              image: NetworkImage(ImageUrl),
               fit: BoxFit.fill,
             ),
             borderRadius: BorderRadius.circular(12),

@@ -2,7 +2,7 @@
 
 import 'package:bookly/Features/home/presentation/view/widget/newest_books_listview.dart';
 
-import 'package:bookly/Features/home/presentation/view/widget/book_listview.dart';
+import 'package:bookly/Features/home/presentation/view/widget/featuredbook_listview.dart';
 import 'package:bookly/Features/home/presentation/view/widget/custom_appbar.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
