@@ -1,4 +1,3 @@
-import 'package:bookly/Features/home/presentation/view/widget/book_listview_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchBookList extends StatelessWidget {

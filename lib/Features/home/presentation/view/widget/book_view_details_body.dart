@@ -9,7 +9,9 @@ import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key, });
+  const BookDetailsViewBody({super.key, required this.bookModel, });
+  final BookModel bookModel;
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,8 @@ class BookDetailsViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              BookDetailsImage(),
+              BookDetailsImage(
+                ImageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? 'https://dummyimage.com/200x300/cccccc/ffffff',),
               const SizedBox(height: 25),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 80),
@@ -32,7 +35,7 @@ class BookDetailsViewBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Harry Potter and the Chamber of Secrets",
+                      bookModel.volumeInfo.title ?? '',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -45,12 +48,12 @@ class BookDetailsViewBody extends StatelessWidget {
 
                     const SizedBox(height: 8),
 
-                    const Text(
-                      "J.K Rowling",
-                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                    Text(
+                      "${bookModel.volumeInfo.authors?[0]}" ,
+                      style: const TextStyle(fontSize: 16, color: Colors.grey),
                     ),
                     const SizedBox(height: 16),
-                    BookDetailsRating(),
+                    BookDetailsRating(rating: bookModel.volumeInfo.averageRating ?? 0, count: bookModel.volumeInfo.ratingsCount ?? 0,),
                   ],
                 ),
               ),

@@ -19,7 +19,7 @@ class CustomButtonDetialsView extends StatelessWidget {
             ),
             child: const Center(
               child: Text(
-                "Buy  |  \$19.99",
+                "Free",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,

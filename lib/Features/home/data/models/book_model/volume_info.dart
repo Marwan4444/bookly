@@ -110,31 +110,4 @@ class VolumeInfo  {
         'infoLink': infoLink,
         'canonicalVolumeLink': canonicalVolumeLink,
       };
-
-  @override
-  List<Object?> get props {
-    return [
-      title,
-      authors,
-      publisher,
-      publishedDate,
-      description,
-      industryIdentifiers,
-      readingModes,
-      pageCount,
-      printType,
-      categories,
-      averageRating,
-      ratingsCount,
-      maturityRating,
-      allowAnonLogging,
-      contentVersion,
-      panelizationSummary,
-      imageLinks,
-      language,
-      previewLink,
-      infoLink,
-      canonicalVolumeLink,
-    ];
-  }
 }
