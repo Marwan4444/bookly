@@ -1,12 +1,14 @@
+import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/home/presentation/view/widget/book_rating.dart';
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextDetailsBook extends StatelessWidget {
   const CustomTextDetailsBook({
-    super.key,
+    super.key, required this.bookModel,
   });
 
+ final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -18,7 +20,7 @@ class CustomTextDetailsBook extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.5,
               child: Text(
-                "Harry Potter and the chamber",
+                bookModel.volumeInfo.title as String,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -32,7 +34,7 @@ class CustomTextDetailsBook extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             Text(
-              "J.K Rowling",
+             "${bookModel.volumeInfo.authors?[0]}",
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.white70,
@@ -43,14 +45,14 @@ class CustomTextDetailsBook extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "19.99 \$",
+                  "free",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-               Bookrating(),
+               Bookrating(rating: bookModel.volumeInfo.averageRating ?? 0 , count: bookModel.volumeInfo.ratingsCount ?? 0 ,),
               ],
             ),
           ],

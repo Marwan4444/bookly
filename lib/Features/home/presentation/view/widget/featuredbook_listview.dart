@@ -23,7 +23,7 @@ class FeaturedBookListview extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: CustomListviewItem(
                     ImageUrl:
-                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                        state.books[index].volumeInfo.imageLinks!.thumbnail,
                   ),
                 );
               },
@@ -32,7 +32,8 @@ class FeaturedBookListview extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorMessage(errmessage: state.errMessage);
         } else {
-          return CustomLoadingWidget();
+          return CustomLoadingWidget(LoadedWidget: CustomListviewItem(ImageUrl: 'https://dummyimage.com/200x300/cccccc/ffffff'), 
+          isLoading: true,);
         }
       },
     );

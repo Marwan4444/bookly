@@ -11,7 +11,8 @@ class SearchBookList extends StatelessWidget {
       child: ListView.builder(
         padding: EdgeInsets.zero,
         itemBuilder: (BuildContext context, int index) {
-          return BookListViewItem();
+          //return BookListViewItem();
+          return const Text("data");
         },
       ),
     );

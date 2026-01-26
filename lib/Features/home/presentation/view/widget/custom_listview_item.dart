@@ -18,7 +18,8 @@ class CustomListviewItem extends StatelessWidget {
            imageUrl: ImageUrl,
             fit: BoxFit.fill, 
             errorWidget: (context, url, error) => const Icon(Icons.error),
-          ),)
+          ),
+          )
       ),
     );
   }

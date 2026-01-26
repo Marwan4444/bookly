@@ -2,8 +2,10 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class Bookrating extends StatelessWidget {
-  const Bookrating({super.key});
+  const Bookrating({super.key , required this.rating , required this.count}); 
 
+ final num rating ;
+final int count ;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -15,12 +17,12 @@ class Bookrating extends StatelessWidget {
         ),
         const SizedBox(width: 5),
         Text(
-          "4.5",
+          rating.toString(),
           style:Styles.textStyle16
         ),
         const SizedBox(width: 5),
         Text(
-          "(250)",
+          "($count)",
           style: Styles.textStyle14,
         ),
       ],

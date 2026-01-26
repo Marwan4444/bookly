@@ -1,13 +1,16 @@
 import 'dart:ui';
 
+import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/Features/home/presentation/view/widget/custom_listview_item.dart';
 import 'package:bookly/Features/home/presentation/view/widget/custom_text_details_book.dart';
 
-import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
+  const BookListViewItem({super.key, required this.bookModel,});
+
+  final BookModel bookModel ;
 
   @override
   Widget build(BuildContext context) {
@@ -38,19 +41,11 @@ class BookListViewItem extends StatelessWidget {
                         height: 130,
                         child: AspectRatio(
                           aspectRatio: 2.7 / 4,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(Assets.testImage),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
+                          child: CustomListviewItem(ImageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,),
                         ),
                       ),
 
-                      CustomTextDetailsBook(),
+                      CustomTextDetailsBook(bookModel: bookModel,),
                       
                     ],
                   ),

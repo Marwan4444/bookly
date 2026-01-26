@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/home/presentation/view/widget/book%20_details_rating.dart';
 import 'package:bookly/Features/home/presentation/view/widget/book_details_image.dart';
 import 'package:bookly/Features/home/presentation/view/widget/custom_appbar_detailsview.dart';
@@ -8,7 +9,7 @@ import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({super.key, });
 
   @override
   Widget build(BuildContext context) {
