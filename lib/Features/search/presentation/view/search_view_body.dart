@@ -1,6 +1,6 @@
 
-import 'package:bookly/Features/search/data/presentation/view/widget/glass_textfeild.dart';
-import 'package:bookly/Features/search/data/presentation/view/widget/search_book_list.dart';
+import 'package:bookly/Features/search/presentation/view/widget/glass_textfeild.dart';
+import 'package:bookly/Features/search/presentation/view/widget/search_book_list.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {

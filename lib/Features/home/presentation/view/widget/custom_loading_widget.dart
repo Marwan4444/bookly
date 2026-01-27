@@ -4,12 +4,13 @@ import 'package:skeletonizer/skeletonizer.dart';
 class CustomLoadingWidget extends StatelessWidget {
   const CustomLoadingWidget({
     super.key,
-    required this.LoadedWidget,
-    required this.isLoading,
+    required this.loadedWidget,
+    required this.isLoading, required this.height,
   });
 
-  final Widget LoadedWidget;
+  final Widget loadedWidget;
   final bool isLoading;
+  final num height;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class CustomLoadingWidget extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: LoadedWidget,
+                  child: loadedWidget,
                 );
               },
             ),
@@ -34,7 +35,7 @@ class CustomLoadingWidget extends StatelessWidget {
         ),
       );
     } else {
-      return LoadedWidget;
+      return loadedWidget;
     }
   }
 }

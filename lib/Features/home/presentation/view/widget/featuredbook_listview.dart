@@ -32,8 +32,10 @@ class FeaturedBookListview extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorMessage(errmessage: state.errMessage);
         } else {
-          return CustomLoadingWidget(LoadedWidget: CustomListviewItem(ImageUrl: 'https://dummyimage.com/200x300/cccccc/ffffff'), 
-          isLoading: true,);
+          return CustomLoadingWidget(
+            loadedWidget: CustomListviewItem(ImageUrl: 'https://dummyimage.com/200x300/cccccc/ffffff'), 
+          isLoading: true,
+           height:  MediaQuery.of(context).size.height * 0.3,);
         }
       },
     );
