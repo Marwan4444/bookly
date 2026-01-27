@@ -1,6 +1,8 @@
 import 'dart:ui';
 
+import 'package:bookly/Features/search/presentation/manger/search_books_cubit/search_books_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class GlassTextfeild extends StatelessWidget {
   const GlassTextfeild({
@@ -22,12 +24,16 @@ class GlassTextfeild extends StatelessWidget {
           ),
     
           child: TextField(
+            onSubmitted: (query){
+              context.read<SearchBooksCubit>().searchBooks(query);
+            },
             style: const TextStyle(color: Colors.white),
             decoration: const InputDecoration(
               hintText: "Enter Book name",
               hintStyle: TextStyle(color: Colors.white70),
               border: InputBorder.none,
               suffixIcon: Icon(Icons.search, color: Colors.white),
+
             ),
           ),
         ),
